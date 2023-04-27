@@ -13,8 +13,7 @@ int main(void)
 	for (i = 1; i <= 20; i++)
 	{
 		n = sprintf(buffer, "%d\n", i);
-		write(STDOUT_FILENO, buffer, n);
+		write(STDOUT_FILENO, buffee, n);
 	}
-
-return (0);
+	return (0);
 }
