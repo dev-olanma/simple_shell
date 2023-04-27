@@ -35,6 +35,12 @@ int main(void)
 		/*Split the input into commands and arguements*/
 		char *command;
 		char *arg;
+		char *argv[3];
+
+		argv[0] = command;
+		argv[1] = arg;
+		argv[2] = NULL;
+		
 
 		/*Execute the command with execve*/
 		if (command)
