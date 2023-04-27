@@ -11,4 +11,5 @@
 #include <string.h>
 #include <signal.h>
 
+void *_calloc(unsigned int num_elements, unsigned int element_size);
 #endif
