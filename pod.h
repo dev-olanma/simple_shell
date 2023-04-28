@@ -19,4 +19,20 @@ void _noargv(char *argv[], char *envp[]);
 void _singleargv(char *argv[], char *envp[]);
 int rev(char **p, int loop, char *line, char **args, char ***env_vars, int *num_env_vars, char *full_input);
 void functions(char *line, int loop, char *argv[], char ***env_vars, int *num_env_vars, char *full_input);
-#endif
+
+/* --- Global Variables --- */
+
+extern char **environ;
+
+/* --- Function Prototypes --- */
+
+/* is_env - finds if line input is env */
+int is_env(char **args, char **myenv);
+
+/* create_env - creates a copy of the environmental variables */
+char **create_env(char *envp[]);
+
+/* env - function to print the environment variables */
+void env(char **myenv);
+
+#endif /* POD_H */
