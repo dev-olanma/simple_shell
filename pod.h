@@ -22,13 +22,19 @@ void functions(char *line, int loop, char *argv[], char ***env_vars, int *num_en
 
 /* --- Global Variables --- */
 
+extern char **environ;
+
+/* --- Function Prototypes --- */
+
 /* is_env - finds if line input is env */
 int is_env(char **args, char **myenv);
 
-/* create_env - creates a copy of the environmental variables */
+/* create_env - creates a copy of the environmental variables, update environmental variables for PWD and OLDPWD */
 char **create_env(char *envp[]);
+void update_oldpwd_env(char *buf, char **my_env);
+void update_pwd_env(char *buf, char **my_env);
 
 /* env - function to print the environment variables */
 void env(char **myenv);
 
-#endif
+#endiif
