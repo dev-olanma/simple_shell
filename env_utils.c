@@ -7,26 +7,26 @@
  */
 int is_env(char **args, char **myenv)
 {
-    char str[4] = "env";
-    int i = 0, j = 0, cont = 0;
+	char str[4] = "env";
+	int i = 0, j = 0, cont = 0;
 
-    while (args[0][j] != '\0')
-        j++;
-    if (j == 3)
-    {
-        while (i < 3)
-        {
-            if (args[0][i] == str[i])
-                cont++;
-            i++;
-        }
-        if (cont == 3)
-        {
-            env(myenv);
-            return (0);
-        }
-    }
-    return (-1);
+	while (args[0][j] != '\0')
+		j++;
+	if (j == 3)
+	{
+		while (i < 3)
+		{
+			if (args[0][i] == str[i])
+				cont++;
+			i++;
+		}
+		if (cont == 3)
+		{
+			env(myenv);
+			return (0);
+		}
+	}
+	return (-1);
 }
 /**
  * create_env - creates a copy of the environmental variables
@@ -35,31 +35,31 @@ int is_env(char **args, char **myenv)
  */
 char **create_env(char *envp[])
 {
-    int i, j = 0, c = 0;
-    static char **myenv;
+	int i, j = 0, c = 0;
+	static char **myenv;
 
-    for (i = 0; envp[i] != NULL; i++)
-        ;
-    myenv = calloc(i + 1, sizeof(char *));
-    if (!myenv)
-        return (NULL);
-    while (envp[j] != NULL)
-    {
-        c = 0;
-        while (envp[j][c] != '\0')
-            c++;
-        myenv[j] = calloc(c + 1, sizeof(char));
-        if (myenv[j] == NULL)
-        {
-            free_grid(myenv, j);
-            return (NULL);
-        }
-        for (i = 0; i < c; i++)
-            myenv[j][i] = envp[j][i];
-        j++;
-    }
-    myenv[j] = NULL;
-    return (myenv);
+	for (i = 0; envp[i] != NULL; i++)
+		;
+	myenv = calloc(i + 1, sizeof(char *));
+	if (!myen)
+		return (NULL);
+	while (envp[j] != NULL)
+	{
+		c = 0;
+		while (envp[j][c] != '\0')
+			c++;
+		myenv[j] = calloc(c + 1, sizeof(char));
+		if (myenv[j] == NULL)
+		{
+			free_grid(myenv, j);
+			return (NULL);
+		}
+		for (i = 0; i < c; i++)
+			myenv[j][i] = envp[j][i];
+		j++;
+	}
+	myenv[j] = NULL;
+	return (myenv);
 }
 /**
  * env - function to print the environment variables
@@ -68,11 +68,11 @@ char **create_env(char *envp[])
  */
 void env(char **myenv)
 {
-    int i;
+	int i;
 
-    for (i = 0; myenv[i] != NULL; i++)
-    {
-        write(STDOUT_FILENO, myenv[i], _strlen(myenv[i]));
-        write(STDOUT_FILENO, "\n", 1);
-    }
+	for (i = 0; myenv[i] != NULL; i++)
+	{
+		write(STDOUT_FILENO, myenv[i], _strlen(myenv[i]));
+		write(STDOUT_FILENO, "\n", 1);
+	}
 }

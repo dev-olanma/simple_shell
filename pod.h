@@ -22,10 +22,6 @@ void functions(char *line, int loop, char *argv[], char ***env_vars, int *num_en
 
 /* --- Global Variables --- */
 
-extern char **environ;
-
-/* --- Function Prototypes --- */
-
 /* is_env - finds if line input is env */
 int is_env(char **args, char **myenv);
 
@@ -35,4 +31,4 @@ char **create_env(char *envp[]);
 /* env - function to print the environment variables */
 void env(char **myenv);
 
-#endif /* POD_H */
+#endif
